@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Actual Size Gatsby Starter`,
+		title: `Frontend Mentor - My Team`,
 		description: `Built by 👾 in Pittsburgh, PA.`,
-		author: `@actualsize`,
+		author: `@ronniekram`,
 	},
 	plugins: [
 		{

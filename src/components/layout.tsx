@@ -1,5 +1,6 @@
 import * as React from "react";
 import { GlobalStyles } from "twin.macro";
+import "../assets/styles/fonts.css";
 
 const Layout = ({
 	children,
@@ -7,7 +8,7 @@ const Layout = ({
 }: {
 	children: React.ReactNode;
 }): JSX.Element => (
-	<div {...rest}>
+	<div {...rest} tw="font-display">
 		<GlobalStyles />
 		{children}
 	</div>
