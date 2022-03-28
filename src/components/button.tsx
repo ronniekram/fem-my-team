@@ -31,6 +31,7 @@ const baseStyles = [
 	tw`rounded-3xl`,
 	tw`font-display font-semibold text-lg line-height[28px]`,
 	tw`transition duration-300 ease-in-out`,
+	tw`flex justify-center items-center`,
 	tw`width[9.5625rem] height[3rem]`,
 	tw`disabled:(opacity-25)`,
 ];
