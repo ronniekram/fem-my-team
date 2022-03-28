@@ -1,9 +1,27 @@
-import tw, { styled } from "twin.macro";
+import { Link } from "gatsby";
+import tw from "twin.macro";
 
 // ========== TYPES
+const colors = {
+	LIGHT: [
+		tw`text-white bg-transparent`,
+		tw`border-2 border-white`,
+		tw`hover:(text-green-400 bg-white)`,
+	],
+	DARK: [
+		tw`text-green-400 bg-transparent`,
+		tw`border-2 border-green-400`,
+		tw`hover:(text-white bg-green-400)`,
+	],
+	SECONDARY: [
+		tw`bg-white text-green-400`,
+		tw`hover:(bg-blue-100)`,
+	],
+};
+
 type ButtonProps = {
 	label: string;
-	color: `PRIMARY LIGHT` | `PRIMARY DARK` | `SECONDARY`;
+	color: keyof typeof colors;
 	href?: string;
 	onClick?: () => void;
 };
@@ -17,29 +35,30 @@ const baseStyles = [
 	tw`disabled:(opacity-25)`,
 ];
 
-const light = [
-	tw`text-white bg-transparent`,
-	tw`border-2 border-white`,
-	tw`hover:(text-green-400 bg-white)`,
-];
-
-const dark = [
-	tw`text-green-400 bg-transparent`,
-	tw`border-2 border-green-400`,
-	tw`hover:(text-white bg-green-400)`,
-];
-
-const secondary = [
-	tw`bg-white text-green-400`,
-	tw`hover:(bg-blue-100)`,
-];
-
 // ========== COMPONENTS
 const Button = ({
 	label,
 	color,
 	href,
 	onClick,
-}: ButtonProps) => {};
+}: ButtonProps) => {
+	if (href) {
+		return (
+			<div css={[baseStyles, colors[color]]}>
+				<Link to={href}>{label}</Link>
+			</div>
+		);
+	}
+
+	return (
+		<button
+			type="button"
+			onClick={onClick}
+			css={[baseStyles, colors[color]]}
+		>
+			{label}
+		</button>
+	);
+};
 
 export default Button;
