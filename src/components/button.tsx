@@ -29,7 +29,7 @@ type ButtonProps = {
 // ========== STYLES
 const baseStyles = [
 	tw`rounded-3xl`,
-	tw`font-semibold text-lg line-height[28px]`,
+	tw`font-display font-semibold text-lg line-height[28px]`,
 	tw`transition duration-300 ease-in-out`,
 	tw`width[9.5625rem] height[3rem]`,
 	tw`disabled:(opacity-25)`,

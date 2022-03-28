@@ -8,7 +8,7 @@ const Layout = ({
 }: {
 	children: React.ReactNode;
 }): JSX.Element => (
-	<div {...rest} tw="font-display">
+	<div {...rest} tw="font-display antialiased">
 		<GlobalStyles />
 		{children}
 	</div>
