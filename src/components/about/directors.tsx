@@ -12,8 +12,8 @@ type DirectorsProps = {
 };
 
 // ========== STYLES ==========
-const widths = tw`md:(width[42.8125rem]) lg:(width[45.625rem]) xl:(width[69.375rem])`;
-const Wrapper = styled.div`
+export const widths = tw`md:(width[42.8125rem]) lg:(width[45.625rem]) xl:(width[69.375rem])`;
+export const Wrapper = styled.div`
 	${tw`grid`};
 	${tw`grid-cols-1 gap-y-6`};
 	${tw`md:(grid-cols-2 gap-y-12 gap-x-3)`};
