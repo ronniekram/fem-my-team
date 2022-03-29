@@ -44,11 +44,11 @@ const Logos = () => (
 			<img
 				src={bg}
 				alt=""
-				tw="width[12.5rem] height[12.5rem] margin-left[-100px] margin-top[-100px] md:(ml-0)"
+				tw="width[12.5rem] height[12.5rem] margin-left[-100px] margin-top[-100px] md:(ml-0) xl:(width[15.625rem] height[15.625rem] margin-top[-125px])"
 			/>
 		</div>
 		<div tw="mx-auto width[20.3125rem] md:(width[30.75rem]) lg:(width[56.25rem]) xl:(width[60.75rem])">
-			<h1 tw="font-bold text-blue-100 text-[32px] mt-2 mb-4 md:(text-4xl mt-6 mb-8) lg:(text-5xl mb-12)">
+			<h1 tw="font-bold text-blue-100 text-[32px] mt-2 mb-4 md:(text-4xl mt-6 mb-8) lg:(text-5xl mb-12) xl:(mt-0)">
 				Some of our clients
 			</h1>
 			<Wrapper>
