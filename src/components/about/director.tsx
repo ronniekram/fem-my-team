@@ -26,9 +26,9 @@ export type DirectorProps = {
 
 // ===== STYLES =====
 const Wrapper = styled.div`
-	${tw`relative`};
+	${tw`relative mb-7`};
 	${tw`width[20.4375rem] height[15.8125rem]`};
-	${tw`lg:(width[20.4375rem] height[15.8125rem])`};
+	${tw`lg:(width[21.875rem] height[15.8125rem])`};
 	${tw`text-white text-[15px] line-height[25px]`};
 `;
 
@@ -57,7 +57,7 @@ export const CardToggle = ({
 	const rotate = useSpring({
 		from: { rotateZ: 0 },
 		to: { rotateZ: 315 },
-		config: { mass: 1, tension: 200, friction: 40 },
+		config: { mass: 1, tension: 200, friction: 60 },
 		reverse: !open,
 		ref: springRef,
 	});
