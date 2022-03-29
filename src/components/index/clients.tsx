@@ -1,7 +1,7 @@
 import React from "react";
 import "twin.macro";
 import Client, { ClientProps } from "./client";
-import { widths, Wrapper } from "./directors";
+import { widths, Wrapper } from "../about/directors";
 import topBg from "../../assets/images/patterns/bg-pattern-home-4-about-3.svg";
 import bottomBg from "../../assets/images/patterns/bg-pattern-about-2-contact-1.svg";
 

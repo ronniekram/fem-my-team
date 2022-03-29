@@ -1,5 +1,5 @@
 import { DirectorProps } from "../components/about/director";
-import { ClientProps } from "../components/about/client";
+import { ClientProps } from "../components/index/client";
 import nikita from "./images/avatars/avatar-nikita.jpg";
 import cristian from "./images/avatars/avatar-christian.jpg";
 import cruz from "./images/avatars/avatar-cruz.jpg";
