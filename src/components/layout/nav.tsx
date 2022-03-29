@@ -49,11 +49,19 @@ export const MobileNav = () => {
 		right: open ? 0 : -300,
 	});
 
+	const opacity = useSpring({
+		from: { opacity: 0 },
+		opacity: open ? 100 : 0,
+	});
+
 	return (
 		<>
 			<MobileBar>
 				{open && (
-					<div tw="absolute top-0 left-0 bg-black opacity-50 width[23.4375rem] h-full" />
+					<a.div
+						style={opacity}
+						tw="absolute top-0 left-0 bg-black opacity-50 width[23.4375rem] h-full"
+					/>
 				)}
 				<div>
 					<img src={logo} alt="myteam logo" tw="w-32 h-8" />
