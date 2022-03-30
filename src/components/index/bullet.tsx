@@ -58,3 +58,5 @@ const Bullet = ({ icon, title, content }: BulletProps) => {
 		</Contact>
 	);
 };
+
+export default Bullet;
