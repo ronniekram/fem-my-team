@@ -15,7 +15,7 @@ const Layout = ({
 	return (
 		<div
 			{...rest}
-			tw="font-display antialiased flex flex-col w-screen h-screen relative overflow-x-hidden bg-blue-200"
+			tw="font-display antialiased flex flex-col w-screen h-screen relative overflow-x-hidden bg-green-100"
 		>
 			<GlobalStyles />
 			<div css={[`flex: 1 0 auto;`]}>

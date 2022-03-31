@@ -1,18 +1,9 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import person from "../../assets/images/icons/icon-person.svg";
-import cog from "../../assets/images/icons/icon-cog.svg";
-import chart from "../../assets/images/icons/icon-chart.svg";
 
 // ========== TYPES ==========
-const icons = {
-	PERSON: person,
-	COG: cog,
-	CHART: chart,
-};
-
-type BulletProps = {
-	icon: keyof typeof icons;
+export type BulletProps = {
+	icon: JSX.Element;
 	title?: string;
 	content: string;
 };
@@ -31,7 +22,7 @@ const Index = styled.div`
 	${tw`mx-auto`};
 	${tw`width[20.4375rem]`};
 	${tw`md:(width[35.8125rem])`};
-	${tw`xl:(width[33.75rem])`};
+	${tw`xl:(width[33.75rem] mb-8)`};
 	${tw`md:(flex items-center)`};
 	h2 {
 		${tw`text-coral text-lg font-bold line-height[28px] mb-2 md:(mb-4)`};

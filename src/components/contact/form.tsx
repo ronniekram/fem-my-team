@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import { useForm } from "react-hook-form";
 import Input from "./input";
 import Button from "../button";
 import AnimatedEllipsis from "../ellipsis";
-import bg from "../../assets/images/patterns/bg-pattern-contact.svg";
+import bg from "../../assets/images/patterns/bg-pattern-contact-2.svg";
 
 // ========== TYPES ==========
 export type FormFields = {
@@ -24,9 +24,13 @@ const FormWrapper = styled.form`
 
 // ========== COMPONENTS ==========
 const Form = () => {
+	const [disabled, setDisabled] = useState<boolean>(true);
+
 	const {
 		handleSubmit,
 		register,
+		getValues,
+		watch,
 		formState: { errors, isSubmitting, isValid },
 	} = useForm<FormFields>();
 
@@ -34,8 +38,17 @@ const Form = () => {
 		console.log(data);
 	};
 
+	const allFields = watch();
+
+	useEffect(() => {
+		const values = Object.values(getValues());
+		if (values.every((value) => value.trim() !== ``)) {
+			setDisabled(!disabled);
+		}
+	}, [allFields]);
+
 	return (
-		<div tw="w-full">
+		<div tw="w-full bg-transparent pt-[3.5rem] relative">
 			<FormWrapper onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					fieldType="INPUT"
@@ -43,7 +56,7 @@ const Form = () => {
 					name="name"
 					placeholder="Name"
 					type="text"
-					errors={errors}
+					errors={errors?.name?.message || undefined}
 					register={register}
 				/>
 
@@ -53,7 +66,7 @@ const Form = () => {
 					name="email"
 					placeholder="Email"
 					type="email"
-					errors={errors}
+					errors={errors?.email?.message || undefined}
 					register={register}
 				/>
 
@@ -63,7 +76,7 @@ const Form = () => {
 					name="company"
 					placeholder="Company"
 					type="text"
-					errors={errors}
+					errors={errors?.company?.message || undefined}
 					register={register}
 				/>
 
@@ -73,7 +86,7 @@ const Form = () => {
 					name="title"
 					placeholder="Title"
 					type="text"
-					errors={errors}
+					errors={errors?.title?.message || undefined}
 					register={register}
 				/>
 
@@ -82,28 +95,30 @@ const Form = () => {
 					label="Message"
 					name="message"
 					placeholder="Message"
-					errors={errors}
+					errors={errors?.message?.message || undefined}
 					register={register}
 				/>
 
-				<Button
-					label={
-						isSubmitting ? (
-							<AnimatedEllipsis character="•" />
-						) : (
-							"submit"
-						)
-					}
-					color="DARK"
-					type="submit"
-					disabled={!isValid}
-				/>
+				<div tw="pt-6 px-4">
+					<Button
+						label={
+							isSubmitting ? (
+								<AnimatedEllipsis character="•" />
+							) : (
+								"submit"
+							)
+						}
+						color="SECONDARY"
+						type="submit"
+						disabled={disabled}
+					/>
+				</div>
 			</FormWrapper>
-			<div tw="overflow-hidden w-full flex justify-end">
+			<div tw="overflow-hidden w-full flex justify-end -mt-4 md:(-mt-24)">
 				<img
 					src={bg}
 					alt=""
-					tw="width[12.5rem] height[12.5rem] margin-bottom[-100px] margin-right[-100px]"
+					tw="width[12.5rem] height[12.5rem] margin-bottom[-100px] margin-right[-100px] md:(mb-0)"
 				/>
 			</div>
 		</div>

@@ -11,7 +11,7 @@ type ClientsProps = {
 };
 
 // ========== COMPONENTS ==========
-const Clients = ({ clients }: ClientsProps) => (
+const Clients = ({ clients }: { clients: ClientProps[] }) => (
 	<div tw="w-full mx-auto bg-green-200">
 		<div tw="w-full flex justify-start overflow-hidden">
 			<img src={topBg} alt="" />

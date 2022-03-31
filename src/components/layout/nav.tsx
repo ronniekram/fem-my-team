@@ -27,9 +27,9 @@ const MobileSlide = styled.nav`
 `;
 
 const Bar = styled.nav`
-	${tw`w-full`};
+	${tw`w-full height[11.125rem]`};
 	${tw`flex items-center justify-between`};
-	${tw`px-10 pt-16 lg:(px-[10.3125rem] pt-[4.5625rem])`};
+	${tw`px-10 lg:(px-[10.3125rem])`};
 `;
 
 const Href = styled.div`

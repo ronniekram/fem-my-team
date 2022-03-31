@@ -1,31 +1,28 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import {
-	UseFormRegister,
-	FieldErrors,
-} from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 import { FormFields } from "./form";
 
 type InputTypes = `text` | `email` | `tel`;
 
 type FormField = {
 	label: string;
-	name: string;
+	name: "name" | "email" | "company" | "title" | "message";
 	placeholder: string;
 	register: UseFormRegister<FormFields>;
 	fieldType: `INPUT` | `TEXTAREA`;
-	errors?: FieldErrors<FormFields>;
+	errors: string | undefined;
 	type?: InputTypes;
 };
 
 // ========== STYLES ==========
 
 const styles = [
-	tw`w-full`,
-	tw`border-b border-white text-white`,
+	tw`w-full bg-transparent`,
+	tw`border-b border-white text-white opacity-100`,
 	tw`text-[15px] line-height[25px]`,
-	tw`p-4`,
-	tw`focus:(border-blue-100)`,
+	tw`p-4 my-3`,
+	tw`focus:(border-blue-100) active:(border-blue-100)`,
 	`
     ::placeholder {
       ${tw`text-white opacity-60`};
@@ -77,7 +74,7 @@ const Input = ({
 				{...register(name, { required: true })}
 				name={name}
 				placeholder={placeholder}
-				css={[styles]}
+				css={[styles, tw`height[5.25rem]`, `resize: none;`]}
 			/>
 		)}
 		{errors && (
