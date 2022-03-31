@@ -20,10 +20,12 @@ const colors = {
 };
 
 type ButtonProps = {
-	label: string;
+	label: string | JSX.Element;
 	color: keyof typeof colors;
 	href?: string;
 	onClick?: () => void;
+	disabled?: boolean;
+	type?: `submit` | `button` | `reset`;
 };
 
 // ========== STYLES
@@ -42,6 +44,8 @@ const Button = ({
 	color,
 	href,
 	onClick,
+	disabled,
+	type,
 }: ButtonProps) => {
 	if (href) {
 		return (
@@ -53,7 +57,8 @@ const Button = ({
 
 	return (
 		<button
-			type="button"
+			type={type || `button`}
+			disabled={disabled}
 			onClick={onClick}
 			css={[baseStyles, colors[color]]}
 		>

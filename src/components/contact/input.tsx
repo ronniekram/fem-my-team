@@ -2,8 +2,9 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import {
 	UseFormRegister,
-	FieldValues,
+	FieldErrors,
 } from "react-hook-form";
+import { FormFields } from "./form";
 
 type InputTypes = `text` | `email` | `tel`;
 
@@ -11,9 +12,9 @@ type FormField = {
 	label: string;
 	name: string;
 	placeholder: string;
-	register: UseFormRegister<FieldValues>;
+	register: UseFormRegister<FormFields>;
 	fieldType: `INPUT` | `TEXTAREA`;
-	errors?: any;
+	errors?: FieldErrors<FormFields>;
 	type?: InputTypes;
 };
 
