@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 	${tw`grid-cols-1 gap-x-6 gap-y-6`};
 	${tw`md:(grid-cols-2 gap-8)`};
 	${tw`lg:(grid-cols-3 gap-x-8 gap-y-10)`}
-	${tw`mb-28`};
+	${tw`pb-28`};
 `;
 
 const Logos = () => (
