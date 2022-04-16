@@ -48,7 +48,7 @@ const Form = () => {
 	}, [allFields]);
 
 	return (
-		<div tw="w-full bg-transparent pt-[3.5rem] relative">
+		<div tw="w-full bg-transparent pt-[3.5rem] relative xl:(pt-0)">
 			<FormWrapper onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					fieldType="INPUT"
@@ -114,13 +114,6 @@ const Form = () => {
 					/>
 				</div>
 			</FormWrapper>
-			<div tw="overflow-hidden w-full flex justify-end -mt-4 md:(-mt-24)">
-				<img
-					src={bg}
-					alt=""
-					tw="width[12.5rem] height[12.5rem] margin-bottom[-100px] margin-right[-100px] md:(mb-0)"
-				/>
-			</div>
 		</div>
 	);
 };

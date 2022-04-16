@@ -11,7 +11,7 @@ export type BulletProps = {
 // ========== STYLES ==========
 const Contact = styled.div`
 	${tw`mx-auto`};
-	${tw`width[20.4375rem]`};
+	${tw`width[20.4375rem] mb-6`};
 	${tw`md:(width[32.1875rem])`};
 	${tw`xl:(width[33.75rem])`};
 	${tw`text-white text-lg font-bold line-height[28px]`};
