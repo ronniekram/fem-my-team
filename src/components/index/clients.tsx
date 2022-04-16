@@ -18,7 +18,7 @@ const Clients = ({ clients }: { clients: ClientProps[] }) => (
 		</div>
 
 		<h1
-			tw="mx-auto mt-10 mb-12 text-white font-bold text-[26px] width[20.4375rem] md:(text-[34px]) lg:(text-4xl mb-14) xl:(text-5xl)"
+			tw="mx-auto mt-10 mb-12 text-white font-bold text-[32px] width[20.4375rem] md:(text-[34px]) lg:(text-4xl mb-14) xl:(text-5xl)"
 			css={[widths]}
 		>
 			Delivering real results for top companies. Some of our

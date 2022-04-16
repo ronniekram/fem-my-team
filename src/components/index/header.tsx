@@ -35,6 +35,7 @@ const Wrapper = styled.section`
 		${tw`text-white font-bold`};
 		${tw`text-[32px]`};
 		${tw`xl:(text-[48px])`};
+		${tw`w-3/4`};
 	}
 `;
 
@@ -45,10 +46,10 @@ const IndexHeader = () => {
 	return (
 		<div tw="w-full bg-green-300">
 			<Wrapper>
-				<div tw="flex justify-between">
-					<div>
+				<div tw="flex justify-between relative w-full">
+					<div tw="relative z-10 mt-16 mb-14 md:(mt-24) xl:(mt-0)">
 						<div tw="bg-coral width[50px] h-1 mb-[3.375rem]" />
-						<h1>
+						<h1 tw="line-height[normal]">
 							Build & manage distributed teams link no one
 							else.
 						</h1>
@@ -57,12 +58,12 @@ const IndexHeader = () => {
 						<div tw="overflow-hidden">
 							<img
 								src={bg}
-								tw="width[12.5rem] height[12.5rem] margin-right[-124px]"
+								tw="width[12.5rem] height[15.25rem] margin-right[-124px] absolute top-0 right-0 z-0 md:(mr-[-200px])"
 							/>
 						</div>
 					)}
 				</div>
-				<div>
+				<div tw="pb-16 md:(pb-24) xl:(pb-0)">
 					{bullets.map((bullet) => (
 						<Bullet
 							key={bullet.title}
@@ -77,7 +78,7 @@ const IndexHeader = () => {
 				<div tw="w-full overflow-hidden flex justify-end">
 					<img
 						src={bg}
-						tw="width[12.5rem] height[12.5rem] margin-right[-100px]"
+						tw="width[12.5rem] height[15.5rem] margin-right[-100px]"
 					/>
 				</div>
 			)}

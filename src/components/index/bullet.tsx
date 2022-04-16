@@ -19,7 +19,7 @@ const Contact = styled.div`
 `;
 
 const Index = styled.div`
-	${tw`mx-auto`};
+	${tw`mx-auto mb-12`};
 	${tw`width[20.4375rem]`};
 	${tw`md:(width[35.8125rem])`};
 	${tw`xl:(width[33.75rem] mb-8)`};
@@ -36,7 +36,7 @@ const Index = styled.div`
 const Bullet = ({ icon, title, content }: BulletProps) => {
 	return title ? (
 		<Index>
-			<div tw="md:(mr-6)">{icon}</div>
+			<div tw="mb-8 md:(mr-6)">{icon}</div>
 			<div>
 				<h2>{title}</h2>
 				<p>{content}</p>
